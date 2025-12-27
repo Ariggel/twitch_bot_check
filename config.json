@@ -1,3 +1,4 @@
 {
-    "API_USERS" : "https://api.twitch.tv/helix/users"
+     "API_USERS" : "https://api.twitch.tv/helix/users"
+    ,"URL_ACCESS" : "https://id.twitch.tv/oauth2/token"
 }
