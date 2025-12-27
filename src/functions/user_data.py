@@ -37,10 +37,10 @@ def get_user(username : str) -> dict:
     data_user_raw = requests.get(api, headers = params_input, params = {"login" : username})
     data_user_json = data_user_raw.json()["data"][0]
     data_user = {
-         "id"           : data_user_json["id"]
-        ,"date_create"  : data_user_json["created_at"]
-        ,"avatar_url"   : data_user_json["profile_image_url"]
-        ,"has_avatar"   : "user-default-pictures" not in data_user_json["profile_image_url"]
+         "id"               : data_user_json["id"]
+        ,"date_create"      : data_user_json["created_at"][:10]
+        ,"has_avatar"       : "user-default-pictures" not in data_user_json["profile_image_url"]
+        ,"has_description"  : bool(data_user_json.get("description", "").strip())
     }
 
     return data_user

@@ -1,4 +1,6 @@
 {
-     "API_USERS" : "https://api.twitch.tv/helix/users"
-    ,"URL_ACCESS" : "https://id.twitch.tv/oauth2/token"
+     "API_USERS"    : "https://api.twitch.tv/helix/users"
+    ,"URL_ACCESS"   : "https://id.twitch.tv/oauth2/token"
+    ,"API_FOLLOW"   : "https://api.twitch.tv/helix/channels/followed"
+    ,"API_SUB"      : "https://api.twitch.tv/helix/subscriptions/user"
 }
