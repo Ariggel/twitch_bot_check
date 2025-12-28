@@ -9,3 +9,8 @@ def url_access() -> any:
     with open('config.json','r') as file:
         config = json.load(file)
     return config['URL_ACCESS']
+
+def api_follow() -> any:
+    with open('config.json','r') as file:
+        config = json.load(file)
+    return config['API_FOLLOW']
