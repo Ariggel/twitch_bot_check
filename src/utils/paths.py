@@ -20,10 +20,11 @@ class GetPath:
         processed_history (Path): directory for historical processed data files (data/processed_history).
     """
     base = Path(__file__).resolve().parents[2]
-    
+
     src = base / 'src'
     functions = src / 'functions'
     notebooks = src / 'notebooks'
+    logs = src / 'log'
 
     data = base / 'data'
     
