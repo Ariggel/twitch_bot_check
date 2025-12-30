@@ -1,4 +1,4 @@
-import os, requests
+import os, requests, pandas
 from utils import load_config
 from functions import credentials
 from utils import logging_config, exceptions
@@ -17,9 +17,10 @@ def get(username : str) -> dict:
     Returns:
         dict: A dictionary containing the following keys:
             - "id" (str): The unique Twitch user ID.
+            - "name" (str): The display name of the dedicated Twitch user.
             - "date_create" (str): The ISO 8601 timestamp of when the account was created.
-            - "avatar_url" (str): URL to the user's profile image.
             - "has_avatar" (bool): True if the user has a custom profile image, False if using the default.
+            - "has_description" (bool): True if the user has a custom description, False if not.
 
     Notes:
         - This function internally calls get_credentials() to obtain a fresh
@@ -91,4 +92,6 @@ def get(username : str) -> dict:
         ,"has_description"  : bool(data_user_json.get("description", "").strip())
     }
 
-    return data_user
+    dataframe = pandas.DataFrame([data_user])
+
+    return dataframe
